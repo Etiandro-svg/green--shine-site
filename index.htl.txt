@@ -1,235 +1,264 @@
-<!doctype html>
-<html lang="pt-PT">
+<!DOCTYPE html>
+<html lang="pt">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Green Shine – Serviços de Limpeza Profissional</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Shine - Limpeza Profissional</title>
+  <style>
+    /* ===== Geral ===== */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f2f2f2;
+      color: #333;
+      scroll-behavior: smooth;
+    }
 
-<style>
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#F5F7F5;
-color:#222;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-header{
-background:#0AA05C;
-padding:25px;
-color:white;
-text-align:center;
-}
+    /* ===== Header com gradiente animado ===== */
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-nav a{
-color:white;
-margin:0 15px;
-font-weight:bold;
-text-decoration:none;
-}
+    header {
+      background: linear-gradient(-45deg, #28a745, #85e085, #0a5500, #a0ff9e);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+      position: relative;
+      overflow: hidden;
+    }
 
-.hero{
-background:white;
-padding:50px 20px;
-text-align:center;
-}
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-.hero img{
-width:100%;
-max-width:800px;
-border-radius:10px;
-}
+    .logo h1 {
+      margin: 10px 0 0 0;
+      font-size: 2.7em;
+      color: #ffffff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
 
-.btn-whatsapp{
-display:inline-block;
-background:#20C97A;
-padding:15px 25px;
-border-radius:10px;
-color:white;
-font-size:18px;
-text-decoration:none;
-margin-top:15px;
-font-weight:bold;
-}
+    /* ===== Logotipo animado ===== */
+    .logo svg {
+      width: 110px;
+      height: 110px;
+    }
 
-.section{
-max-width:1100px;
-margin:auto;
-padding:40px 20px;
-}
+    .pano-amarelo {
+      transform-origin: center;
+      animation: balanço 2s ease-in-out infinite alternate;
+    }
 
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-gap:25px;
-}
+    .pano-azul {
+      transform-origin: center;
+      animation: balanço 2.5s ease-in-out infinite alternate-reverse;
+    }
 
-.card{
-background:white;
-border-radius:10px;
-padding:20px;
-box-shadow:0 4px 12px rgba(0,0,0,0.12);
-text-align:center;
-}
+    @keyframes balanço {
+      0% { transform: rotate(-10deg); }
+      50% { transform: rotate(10deg); }
+      100% { transform: rotate(-10deg); }
+    }
 
-.card img{
-width:100%;
-border-radius:10px;
-margin-bottom:12px;
-}
+    nav {
+      margin-top: 15px;
+    }
 
-footer{
-background:#0AA05C;
-color:white;
-text-align:center;
-padding:25px;
-margin-top:40px;
-}
+    nav a {
+      color: white;
+      font-weight: bold;
+      margin: 0 18px;
+      font-size: 1.2em;
+      padding: 5px 8px;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.3s;
+    }
 
-form input, form textarea, form select{
-width:100%;
-padding:12px;
-margin:8px 0 16px;
-border-radius:6px;
-border:1px solid #ccc;
-}
+    nav a:hover {
+      background: rgba(255,255,255,0.2);
+      transform: scale(1.1);
+    }
 
-form button{
-background:#0AA05C;
-color:white;
-padding:15px;
-font-size:16px;
-border:none;
-border-radius:8px;
-cursor:pointer;
-width:100%;
-}
+    /* ===== Main ===== */
+    main {
+      padding: 30px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-</style>
+    h2 {
+      color: #28a745;
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 25px;
+    }
 
+    /* ===== Serviços com micro-interações ===== */
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .service {
+      background: #ffffffcc;
+      flex: 1 1 280px;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.4s, box-shadow 0.4s, background 0.4s;
+      cursor: pointer;
+    }
+
+    .service:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      background: #e6ffe6;
+    }
+
+    .service h3 {
+      margin-top: 0;
+      color: #0a5500;
+      font-size: 1.4em;
+    }
+
+    /* ===== Contacto ===== */
+    .contact {
+      background-color: #e0ffe0;
+      padding: 30px;
+      border-radius: 20px;
+      margin-top: 40px;
+      text-align: center;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .contact p {
+      font-size: 1.25em;
+      margin: 12px 0;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #28a745;
+      color: white;
+      margin-top: 40px;
+    }
+
+    /* ===== Botão WhatsApp flutuante com pulse ===== */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 65px;
+      height: 65px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      z-index: 1000;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .whatsapp-button:hover {
+      transform: scale(1.15);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    /* ===== Responsividade ===== */
+    @media (max-width: 768px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+
+  </style>
 </head>
 <body>
 
-<header>
-<!-- NOVO LOGÓTIPO SVG -->
-<svg width="200" height="120" viewBox="0 0 300 140">
-<!-- Nome -->
-<text x="50%" y="95%" font-size="36" fill="#20C97A" font-family="Arial"
-text-anchor="middle" font-weight="bold">
-Green Shine
-</text>
+  <header>
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <!-- Borrifador -->
+        <rect x="28" y="10" width="8" height="20" fill="#0a5500"/>
+        <rect x="25" y="30" width="14" height="24" fill="#28a745"/>
+        <!-- Panos animados -->
+        <circle class="pano-amarelo" cx="18" cy="50" r="6" fill="#FFD700"/>
+        <circle class="pano-azul" cx="46" cy="50" r="6" fill="#1E90FF"/>
+      </svg>
+      <h1>Green Shine</h1>
+    </div>
+    <nav>
+      <a href="#services">Serviços</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+  </header>
 
-<!-- Parte superior do borrifador -->
-<rect x="120" y="10" width="60" height="25" rx="5" fill="#0AA05C" />
-<rect x="105" y="10" width="15" height="12" rx="3" fill="#0AA05C" />
+  <main>
+    <section id="services">
+      <h2>Nossos Serviços</h2>
+      <div class="services">
+        <div class="service">
+          <h3>Limpeza de Casas de Férias</h3>
+          <p>Garantimos que a sua casa de férias esteja sempre limpa e pronta para receber visitas.</p>
+        </div>
+        <div class="service">
+          <h3>Escritórios</h3>
+          <p>Limpeza profissional de escritórios e espaços de trabalho, mantendo o ambiente saudável.</p>
+        </div>
+        <div class="service">
+          <h3>Limpeza Pós-Obra</h3>
+          <p>Remoção de pó e resíduos após construções ou reformas.</p>
+        </div>
+        <div class="service">
+          <h3>Prédios e Condomínios</h3>
+          <p>Serviço completo para áreas comuns de prédios, garantindo limpeza e higiene.</p>
+        </div>
+      </div>
+    </section>
 
-<!-- Garrafa -->
-<rect x="112" y="35" width="75" height="65" rx="10" fill="white"
-stroke="#0AA05C" stroke-width="4"/>
+    <section id="contact" class="contact">
+      <h2>Contacto</h2>
+      <p>📞 Telemóvel / WhatsApp: <a href="https://wa.me/351939329061" target="_blank">939 329 061</a></p>
+      <p>📍 Localização: Grande Lisboa</p>
+      <p>Sem horários fixos – estamos disponíveis conforme a sua necessidade!</p>
+    </section>
+  </main>
 
-<!-- Paninho amarelo -->
-<rect x="75" y="65" width="35" height="35" rx="5"
-fill="#FFD93D" stroke="#C4A400" stroke-width="3"/>
+  <footer>
+    &copy; 2025 Green Shine. Todos os direitos reservados.
+  </footer>
 
-<!-- Paninho azul -->
-<rect x="210" y="65" width="35" height="35" rx="5"
-fill="#0096D6" stroke="#005F88" stroke-width="3"/>
-</svg>
-
-<nav>
-<a href="#servicos">Serviços</a>
-<a href="#orcamento">Orçamento</a>
-<a href="#contactos">Contactos</a>
-</nav>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-<h1>Limpeza Profissional no Distrito de Lisboa</h1>
-<p>Casas de férias • Prédios • Pós-obra • Escritórios</p>
-
-<img src="https://images.unsplash.com/photo-1581578017424-1eafc82e01d5" alt="Equipa de limpeza">
-
-<br>
-<a class="btn-whatsapp" href="https://wa.me/351939329061">
-📲 Falar no WhatsApp
-</a>
-</section>
-
-<!-- SERVIÇOS -->
-<section id="servicos" class="section">
-<h2>Os Nossos Serviços</h2>
-
-<div class="services">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="">
-<h3>Casas de Férias</h3>
-<p>Preparação completa, limpeza entre hóspedes e manutenção.</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1599058917212-d750089bc07d" alt="">
-<h3>Prédios e Condomínios</h3>
-<p>Corredores, vidros, elevadores e limpeza regular.</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1600585154358-1f83a6bf05db" alt="">
-<h3>Limpeza Pós-Obra</h3>
-<p>Remoção de restos, pó, resíduos e entrega pronta para uso.</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1590402494682-cd3fb53b519d" alt="">
-<h3>Escritórios</h3>
-<p>Limpeza profissional 24h para empresas e espaços comerciais.</p>
-</div>
-
-</div>
-</section>
-
-<!-- ORÇAMENTO -->
-<section id="orcamento" class="section">
-<h2>Pedir Orçamento</h2>
-
-<form onsubmit="enviar(event)">
-<input placeholder="Nome" required>
-<input placeholder="Telefone ou WhatsApp" required>
-<select required>
-<option value="">Tipo de serviço</option>
-<option>Casas de férias</option>
-<option>Prédios</option>
-<option>Pós-obra</option>
-<option>Escritórios</option>
-</select>
-<textarea placeholder="Descreva o serviço..."></textarea>
-<button>Enviar Pedido</button>
-</form>
-
-<p id="status"></p>
-</section>
-
-<!-- CONTACTOS -->
-<section id="contactos" class="section">
-<h2>Contactos</h2>
-<p><strong>WhatsApp:</strong> 939 329 061</p>
-<p><strong>Email:</strong> info@greenshine.pt (posso criar para si)</p>
-<p><strong>Distrito:</strong> Lisboa</p>
-</section>
-
-<footer>
-Green Shine © 2025 | Limpeza Profissional
-<br>Telefone / WhatsApp: 939 329 061
-</footer>
-
-<script>
-function enviar(e){
-e.preventDefault()
-document.getElementById("status").innerHTML =
-"Pedido enviado! Vamos responder pelo WhatsApp.";
-e.target.reset()
-}
-</script>
+  <!-- Botão WhatsApp flutuante -->
+  <a href="https://wa.me/351939329061" target="_blank" class="whatsapp-button">💬</a>
 
 </body>
 </html>
