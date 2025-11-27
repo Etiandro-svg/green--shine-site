@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Green Shine – Serviços de Limpeza Profissional</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#F5F7F5;
+color:#222;
+}
+
+header{
+background:#0AA05C;
+padding:25px;
+color:white;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+font-weight:bold;
+text-decoration:none;
+}
+
+.hero{
+background:white;
+padding:50px 20px;
+text-align:center;
+}
+
+.hero img{
+width:100%;
+max-width:800px;
+border-radius:10px;
+}
+
+.btn-whatsapp{
+display:inline-block;
+background:#20C97A;
+padding:15px 25px;
+border-radius:10px;
+color:white;
+font-size:18px;
+text-decoration:none;
+margin-top:15px;
+font-weight:bold;
+}
+
+.section{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+padding:20px;
+box-shadow:0 4px 12px rgba(0,0,0,0.12);
+text-align:center;
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+margin-bottom:12px;
+}
+
+footer{
+background:#0AA05C;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+
+form input, form textarea, form select{
+width:100%;
+padding:12px;
+margin:8px 0 16px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+form button{
+background:#0AA05C;
+color:white;
+padding:15px;
+font-size:16px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+width:100%;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+<!-- NOVO LOGÓTIPO SVG -->
+<svg width="200" height="120" viewBox="0 0 300 140">
+<!-- Nome -->
+<text x="50%" y="95%" font-size="36" fill="#20C97A" font-family="Arial"
+text-anchor="middle" font-weight="bold">
+Green Shine
+</text>
+
+<!-- Parte superior do borrifador -->
+<rect x="120" y="10" width="60" height="25" rx="5" fill="#0AA05C" />
+<rect x="105" y="10" width="15" height="12" rx="3" fill="#0AA05C" />
+
+<!-- Garrafa -->
+<rect x="112" y="35" width="75" height="65" rx="10" fill="white"
+stroke="#0AA05C" stroke-width="4"/>
+
+<!-- Paninho amarelo -->
+<rect x="75" y="65" width="35" height="35" rx="5"
+fill="#FFD93D" stroke="#C4A400" stroke-width="3"/>
+
+<!-- Paninho azul -->
+<rect x="210" y="65" width="35" height="35" rx="5"
+fill="#0096D6" stroke="#005F88" stroke-width="3"/>
+</svg>
+
+<nav>
+<a href="#servicos">Serviços</a>
+<a href="#orcamento">Orçamento</a>
+<a href="#contactos">Contactos</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<h1>Limpeza Profissional no Distrito de Lisboa</h1>
+<p>Casas de férias • Prédios • Pós-obra • Escritórios</p>
+
+<img src="https://images.unsplash.com/photo-1581578017424-1eafc82e01d5" alt="Equipa de limpeza">
+
+<br>
+<a class="btn-whatsapp" href="https://wa.me/351939329061">
+📲 Falar no WhatsApp
+</a>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos" class="section">
+<h2>Os Nossos Serviços</h2>
+
+<div class="services">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="">
+<h3>Casas de Férias</h3>
+<p>Preparação completa, limpeza entre hóspedes e manutenção.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1599058917212-d750089bc07d" alt="">
+<h3>Prédios e Condomínios</h3>
+<p>Corredores, vidros, elevadores e limpeza regular.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600585154358-1f83a6bf05db" alt="">
+<h3>Limpeza Pós-Obra</h3>
+<p>Remoção de restos, pó, resíduos e entrega pronta para uso.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1590402494682-cd3fb53b519d" alt="">
+<h3>Escritórios</h3>
+<p>Limpeza profissional 24h para empresas e espaços comerciais.</p>
+</div>
+
+</div>
+</section>
+
+<!-- ORÇAMENTO -->
+<section id="orcamento" class="section">
+<h2>Pedir Orçamento</h2>
+
+<form onsubmit="enviar(event)">
+<input placeholder="Nome" required>
+<input placeholder="Telefone ou WhatsApp" required>
+<select required>
+<option value="">Tipo de serviço</option>
+<option>Casas de férias</option>
+<option>Prédios</option>
+<option>Pós-obra</option>
+<option>Escritórios</option>
+</select>
+<textarea placeholder="Descreva o serviço..."></textarea>
+<button>Enviar Pedido</button>
+</form>
+
+<p id="status"></p>
+</section>
+
+<!-- CONTACTOS -->
+<section id="contactos" class="section">
+<h2>Contactos</h2>
+<p><strong>WhatsApp:</strong> 939 329 061</p>
+<p><strong>Email:</strong> info@greenshine.pt (posso criar para si)</p>
+<p><strong>Distrito:</strong> Lisboa</p>
+</section>
+
+<footer>
+Green Shine © 2025 | Limpeza Profissional
+<br>Telefone / WhatsApp: 939 329 061
+</footer>
+
+<script>
+function enviar(e){
+e.preventDefault()
+document.getElementById("status").innerHTML =
+"Pedido enviado! Vamos responder pelo WhatsApp.";
+e.target.reset()
+}
+</script>
+
+</body>
+</html>
